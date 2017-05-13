@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Bootstrap 101 Template</title>
+    <style>
+    	body{
+    		padding-top:70px;/*留天*/
+    		padding-bottom:70px;/*留地*/
+    	}
+    	
+    	.carousel{
+    		height:500px;
+    		background-color:#FEFAFA;
+    		margin-bottom:60px;
+    	}
+    	.carousel .item{
+    		height:500px;
+    		background-color:#FEFAFA;
+    	}
+    	.carousel img{
+    		width:100%;
+    	}
+    	.carousel-caption{
+    		font-size:14px;
+    	    margin-bottom:10px;
+    	}
+    	#summery-container .col-md-4{
+    		text-align:center;
+    	} 
+    	hr.divider{
+    		margin:40px 0;
+    	}
+    </style>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+   <nav class="navbar navbar-fixed-top navbar-inverse" role="navigation"><!-- default是一个默认的白色样式，fixed-top:固定在顶部；navbar-inverse:白色底部 role?-->
+   	<div class="container-fluid">
+   		<div class="navbar-header">
+   			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#demo-navbar"><!-- 固定导航条在顶部 ，但是会挡住下面的内容，解决bug方法见下面data-target指的就是下面的id="demo-navbar"-->
+   				<span class="sr-only">toggle navigation</span><!-- 这里的button是右上角的按钮，只有在小屏的时候才会显示出来，用来显示出下面的列表 -->
+   				<span class="icon-bar"></span>
+   				<span class="icon-bar"></span>
+   				<span class="icon-bar"></span>
+   			</button>
+   			<a href="#" class="navbar-brand">我喜欢的<span class="glyphicon glyphicon-heart-empty"></span></a>
+   		</div>
+   		<div class="collapse navbar-collapse" id="demo-navbar">
+   			<ul class="nav navbar-nav" >
+   				<li class="active dropdown-header"><a href="#" class="dropdown-toggle" data-toggle="dropdown">music<span class="glyphicon glyphicon-leaf"></span></a>
+   				   <ul class="dropdown-menu"><!-- 二级菜单 -->
+   				        <li><a href="#tab-chrome" data-tab="tab-chrome">Chrome</a></li>
+                        <li><a href="#tab-firefox" data-tab="tab-firefox">Firefox</a></li>
+                       
+                        <li><a href="#tab-opera" data-tab="tab-opera">Opera</a></li>
+                        <li><a href="#tab-ie" data-tab="tab-ie">IE</a></li>
+   				   </ul>
+   				</li>
+   				<li class="active dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">running<span class="glyphicon glyphicon-leaf"></span></a>
+   				   <ul class="dropdown-menu" role="menu">
+   				   	<li><a href="#">poo music</a></li>
+   				   	<li><a href="#">poo music</a></li>
+   				   	<li><a href="#">poo music</a></li>
+   				   
+   				   	<li><a href="#">poo music</a></li>
+   				   </ul>
+   				 </li>
+   					<li class="active dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">music<span class="glyphicon glyphicon-leaf"></span></a>
+   				   <ul class="dropdown-menu" role="menu">
+   				   	<li><a href="#">poo music</a></li>
+   				   	<li><a href="#">poo music</a></li>
+   				   	<li><a href="#">poo music</a></li>
+   				   
+   				   	<li><a href="#">poo music</a></li>
+   				   </ul>
+   				</li>
+   					<li class="active dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">music<span class="glyphicon glyphicon-leaf"></span></a>
+   				   <ul class="dropdown-menu" role="menu">
+   				   	<li><a href="#">poo music</a></li>
+   				   	<li><a href="#">poo music</a></li>
+   				   	<li><a href="#">poo music</a></li>
+   				   
+   				   	<li><a href="#">poo music</a></li>
+   				   </ul>
+   				</li>
+   				<li><a href="#" data-toggle="modal" data-target="#myModal" >about me</a></li><!-- 弹出框的实现 -->
+
+   			</ul>
+
+   		<form role="form" class="navbar-form navbar-right"><!-- 这里的class怎么找 -->
+              <div class="form-group">
+                 <input type="text" class="form-control" placeholder="用户名">
+                 <input type="password" class="form-control" placeholder="密码">
+             </div>
+             <button type="submit" class="btn btn-default">登录</button>
+        </form>   
+   	 </div>
+
+   	</div>
+ </nav>
+<!-- 轮播组件 carousel-->
+<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+  <!-- Indicators图片下面的小圆点 -->
+  <ol class="carousel-indicators">
+    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="1"></li><!-- 对应下面的item -->
+    <li data-target="#carousel-example-generic" data-slide-to="3"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="4"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="5"></li>
+  </ol>
+
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner" role="listbox">
+    <div class="item active">
+      <img src="images/chrome-big.jpg" alt="chrome">
+      <div class="carousel-caption">
+        chrome
+      </div>
+    </div>
+    <div class="item">
+      <img src="images/firefox-big.jpg" alt="firefox">
+      <div class="carousel-caption">
+        firefox
+      </div>
+    </div>
+    <div class="item">
+      <img src="images/ie-big.jpg" alt="ie">
+      <div class="carousel-caption">
+        ie
+      </div>
+    </div>
+    <div class="item">
+      <img src="images/opera-big.jpg" alt="opera">
+      <div class="carousel-caption">
+        opera
+      </div>
+    </div>
+     <div class="item">
+    <img src="images/safari-big.jpg" alt="safari">
+       <div class="carousel-caption">
+    ie
+    </div>
+   </div>
+
+ <!--  Controls -->
+  <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+    <span class="sr-only">上一页</span>
+  </a>
+  <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+    <span class="sr-only">下一页</span>
+  </a>
+</div>
+
+<!-- grid system制作三列布局 ：container；row;col-md-*-->
+<div class="container" id="summery-container">
+  <div class="row">
+      <div class="col-md-4"><img src="images/chrome-logo-small.jpg" class="img-circle" alt="">
+      <h2>opera</h2><p>opera是苹果计算机的最新操作系统的浏览器。</p><p><a class="btn btn-default" href="#" role="button">点我下载</a></p></div>
+      <div class="col-md-4"><img src="images/firefox-logo-small.jpg" class="img-circle" alt="">
+      <h2>opera</h2><p>opera是苹果计算机的最新操作系统的浏览器。</p><p><a class="btn btn-default" href="#" role="button">点我下载</a></p></div>
+      <div class="col-md-4"><img src="images/safari-logo-small.jpg" class="img-circle" alt="">
+      <h2>opera</h2><p>opera是苹果计算机的最新操作系统的浏览器。</p><p><a class="btn btn-default" href="#" role="button">点我下载</a></p></div>
+  </div>
+  <hr class="divider"><!-- 这里添加一条横线 -->
+<!-- </div> -->
+    <!-- Nav tabs标签 -->
+    <ul class="nav nav-tabs" role="tablist" id="tab-list">
+        <li><a href="#tab-chrome" role="tab" data-toggle="tab">Chrome</a></li><!-- 这里的链接对应着下面的id属性 -->
+        <li><a href="#tab-firefox" role="tab" data-toggle="tab">Firefox</a></li>
+        <li  class="active"><a href="#tab-opera" role="tab" data-toggle="tab">Opera</a></li>
+        <li><a href="#tab-ie" role="tab" data-toggle="tab">IE</a></li>
+    </ul>
+
+
+  <!-- Tab panes 标签内容。tab标签的结构-->
+  <div class="tab-content">
+    <div role="tabpanel" class="tab-pane active" id="tab-chrome"><!-- 这里的id也得注意，对应着上面的链接 -->
+        <div class="row feature">  <!-- class:feature是为了给其设置一些样式，不影响其他的样式 -->
+             <div class="col-md-5">
+             <h2>opera</h2>
+             <p>opera是苹果计算机的最新操作系统的浏览器。</p>
+             </div>
+             <div class="col-md-7"><img src="images/chrome-logo.jpg" class="feature-image image-responsive" alt="">
+        
+             </div><!-- 通过这里的id联系。这里的id是上面的href -->
+         </div>
+    </div>
+    <div role="tabpanel" class="tab-pane" id="tab-firefox">
+        <div class="row feature">  
+             
+             <div class="col-md-5"><img src="images/firefox-logo.jpg" class="feature-image image-responsivve" alt="">
+       
+             </div>
+             <div class="col-md-7">
+             <h2>opera</h2>
+             <p>opera是苹果计算机的最新操作系统的浏览器。</p>
+             </div>
+
+        </div>
+    </div>
+    <div role="tabpanel" class="tab-pane" id="tab-opera">
+        <div class="row feature"> 
+  
+          <div class="col-md-5">
+             <h2>opera</h2>
+             <p>opera是苹果计算机的最新操作系统的浏览器。</p>
+             </div>
+             <div class="col-md-7"><img src="images/opera-logo.jpg" class="feature-image image-responsive" alt="">
+        
+             </div>
+        </div>
+    </div>
+    <div role="tabpanel" class="tab-pane" id="tab-ie">
+    	<div class="row feature">
+             
+             <div class="col-md-5"><img src="images/ie-logo.jpg" class="feature-image image-responsive" alt="">
+     
+             </div>
+             <div class="col-md-7">
+             <h2>opera</h2>
+             <p>opera是苹果计算机的最新操作系统的浏览器。</p>
+             </div>
+        </div>
+    </div>
+
+  </div>
+  <footer>
+  	<p class="pull-right"><a href="#top">回到顶部</a></p>
+  	<p>2017.4.18郑肖肖</p>
+  </footer>
+</div>
+
+
+<!-- 弹出框的实现 -->
+<div class="modal fade" id="myModal" data-keyboard="true" data-show="true" ><!-- 1 这里写一个id对应于弹出框的data-target。 fade是用来增加动画效果的,data-board是esc按键是否可以关闭，data-show是否初始化-->
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">about me</h4><!-- 2 弹出框的名称 -->
+      </div>
+      <div class="modal-body"><!-- 弹出框的内容 -->
+       <p>我爱你。cc</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        
+      </div>
+    </div>
+  </div>
+</div>
+  <!--  <p>ahs </p>
+   <p>ahskjgoiejkdswomen doushi haohaizo nishibush idou fngqile </p>
+   <p>ahskjgoiejkdswomen doushi haohaizo nishibush idou fngqile </p>
+   <p>ahskjgoiejkdswomen doushi haohaizo nishibush idou fngqile </p>
+   <p>ahskjgoiejkdswomen doushi haohaizo nishibush idou fngqile </p>
+   <p>ahskjgoiejkdswomen doushi haohaizo nishibush idou fngqile </p>
+   <p>ahskjgoiejkdswomen doushi haohaizo nishibush idou fngqile </p>
+   <p>ahskjgoiejkdswomen doushi haohaizo nishibush idou fngqile </p>
+   <p>ahskjgoiejkdswomen doushi haohaizo nishibush idou fngqile </p> -->
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="js/jquery-1.11.1.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+    	$(function(){
+    		$("#demo-navbar .dropdown-menu a").click(function(){
+    			var href=$(this).attr("href");//获取连接属性
+    			$("#tab-list a[href='"+href+"']").tab("show");
+    		});
+    	})
+    </script>
+  </body>
+</html>
